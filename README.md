@@ -1,12 +1,6 @@
 ﻿# Multilabel-Carparking-System
-# Verilog Code
  
-
-
-        
-       // Moore FSM : output just depends on the current state
-
-        `timescale 1ns / 1ps
+  `timescale 1ns / 1ps
 
 
   module parking_system( 
@@ -16,7 +10,10 @@
              output wire G_LED,R_LED,
              output reg [6:0] HEX_1, HEX_2
                );
+
+
    parameter IDLE = 3'b000, WAIT_PASSWORD = 3'b001, WRONG_PASS = 3'b010, RIGHT_PASS = 3'b011,STOP = 3'b100;
+       // Moore FSM : output just depends on the current state
        reg[2:0] PS, NS;
        reg[31:0] cnt_wait;
        reg red_tmp,green_tmp;
@@ -150,5 +147,3 @@
       assign G_LED = green_tmp;
 
   endmodule
-
-
